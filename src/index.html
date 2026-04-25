@@ -1,14 +1,3 @@
-<!--
-  Hello!
-  -
-  Simplefolio is a clean and responsive portfolio template for Developers!
-  Created by Jacobo Martinez.
-  -
-  Github Repo: https://github.com/cobiwave/simplefolio/
-  Readme: https://github.com/cobiwave/simplefolio/README.md
-  -
-  For business & inquires, contact me -> jacobojavier98@gmail.com
--->
 <!DOCTYPE html>
 <html lang="en" class="sr">
   <head>
@@ -17,28 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 
-    <!-- Todo: put here your site title -->
-    <title>[Your name here] | Developer</title>
-    <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="[username], [name], skill" />
-    <!-- Todo: improve your SEO by adding a small description of you -->
-    <meta name="description" content="[Your name here] | Developer" />
+    <title>Anguchamy Periyakaruppan | Senior Software Engineer — Generative AI</title>
+    <meta name="keywords" content="anguchamy, periyakaruppan, generative AI, LangChain, LangGraph, agentic AI, senior software engineer, distributed systems, Intuit" />
+    <meta name="description" content="Senior Software Engineer with 7+ years building Generative AI platforms, agentic systems, and large-scale distributed infrastructure at Intuit." />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="styles.scss" />
-    <script
-      defer
-      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
-    ></script>
+    <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
-    <!-- Todo: remove the below script once you finish your portfolio -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <style>
+      /* ── Gen AI badge pill ── */
+      .badge-pill {
+        display: inline-block;
+        padding: 4px 14px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin: 4px 3px;
+      }
+      .badge-ai   { background: linear-gradient(135deg, #6c63ff, #48c9b0); color: #fff; }
+      .badge-java { background: #e07b39; color: #fff; }
+      .badge-infra{ background: #2c3e50; color: #cce; }
+
+      /* ── Stats row ── */
+      .stats-row { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin: 2rem 0; }
+      .stat-card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 12px;
+        padding: 1.2rem 2rem;
+        text-align: center;
+        min-width: 160px;
+      }
+      .stat-card .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #6c63ff, #48c9b0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .stat-card .stat-label { font-size: 0.8rem; opacity: 0.75; margin-top: 4px; }
+
+      /* ── Skills grid ── */
+      .skills-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+
+      /* ── Timeline ── */
+      .timeline { position: relative; padding-left: 1.5rem; }
+      .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, #6c63ff, #48c9b0); }
+      .timeline-item { position: relative; margin-bottom: 2.5rem; padding-left: 1.5rem; }
+      .timeline-item::before { content: ''; position: absolute; left: -1.55rem; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #6c63ff; border: 2px solid #48c9b0; }
+      .timeline-date { font-size: 0.78rem; opacity: 0.6; margin-bottom: 0.3rem; }
+      .timeline-company { font-weight: 700; color: #6c63ff; }
+
+      /* ── Gen AI spotlight section ── */
+      .ai-spotlight {
+        background: linear-gradient(135deg, rgba(108,99,255,0.15), rgba(72,201,176,0.10));
+        border: 1px solid rgba(108,99,255,0.3);
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .ai-spotlight h3 { color: #48c9b0; margin-bottom: 1rem; }
+      .ai-spotlight ul { padding-left: 1.2rem; }
+      .ai-spotlight ul li { margin-bottom: 0.5rem; line-height: 1.7; }
+
+      /* Dark overlay fix */
+      #about { background: var(--secondary-color, #0d0d0d); }
+      #experience { padding: 6rem 0; }
+      #skills-section { padding: 5rem 0; background: rgba(108,99,255,0.04); }
+    </style>
   </head>
 
-  <!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
   <body>
     <div id="top"></div>
 
@@ -46,14 +87,12 @@
     <section id="hero" class="jumbotron">
       <div class="container">
         <h1 class="hero-title load-hidden">
-          Hi, my name is <span class="text-color-main">Your Name</span>
+          Hi, I'm <span class="text-color-main">Anguchamy</span>
           <br />
-          I'm the Unknown Developer.
+          I build <span class="text-color-main">Generative AI</span> &amp; Distributed Systems.
         </h1>
         <p class="hero-cta load-hidden">
-          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about"
-            >Know more</a
-          >
+          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">Explore My Work</a>
         </p>
       </div>
     </section>
@@ -62,36 +101,56 @@
     <!-- **** About Section **** -->
     <section id="about">
       <div class="container">
-        <h2 class="section-title load-hidden">About me</h2>
+        <h2 class="section-title load-hidden">About Me</h2>
         <div class="row about-wrapper">
           <div class="col-md-6 col-sm-12">
             <div class="about-wrapper__image load-hidden">
               <img
-                alt="Profile Image"
+                alt="Anguchamy Periyakaruppan"
                 class="img-fluid rounded shadow-lg"
                 height="auto"
                 width="300px"
                 src="assets/profile.jpg"
-                alt="Profile Image"
               />
             </div>
           </div>
           <div class="col-md-6 col-sm-12">
             <div class="about-wrapper__info load-hidden">
               <p class="about-wrapper__info-text">
-                This is where you can describe about yourself. The more you
-                describe about yourself, the more chances you have!
+                Senior Software Engineer with <strong>7+ years</strong> of experience designing large-scale
+                distributed systems and <strong>Generative AI platforms</strong>. Currently at
+                <strong>Intuit</strong>, leading AI Agent development and GTM monetisation infrastructure
+                that serves <strong>70M+ customers</strong> globally.
               </p>
               <p class="about-wrapper__info-text">
-                Extra Information about you! like hobbies and your goals.
+                Deep expertise in <strong>LangChain, LangGraph, and Agentic AI</strong> — building
+                autonomous agents that automate complex business workflows end-to-end. Proven track record:
+                90% API latency reduction, 100% service availability, and zero-downtime deployments across
+                multi-region fintech infrastructure. Open to global opportunities.
               </p>
+
+              <!-- Stats -->
+              <div class="stats-row">
+                <div class="stat-card">
+                  <div class="stat-number">7+</div>
+                  <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">70M+</div>
+                  <div class="stat-label">Customers Served</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">90%</div>
+                  <div class="stat-label">API Latency Reduction</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">Service Availability</div>
+                </div>
+              </div>
+
               <span class="d-flex mt-3">
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--resume"
-                  href="assets/resume.pdf"
-                >
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="assets/resume.pdf">
                   View Resume
                 </a>
               </span>
@@ -102,184 +161,479 @@
     </section>
     <!-- /END About Section -->
 
-    <!-- **** Projects Section **** -->
+    <!-- **** Gen AI Expertise Section **** -->
     <section id="projects">
       <div class="container">
         <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Projects</h2>
+          <h2 class="section-title dark-blue-text">Generative AI &amp; Key Projects</h2>
 
-          <!-- Notice: each .row is a project -->
+          <!-- Gen AI Spotlight -->
+          <div class="ai-spotlight load-hidden">
+            <h3>🤖 Generative AI Expertise</h3>
+            <p style="opacity:0.85; margin-bottom:1rem;">
+              Specialising in building production-grade <strong>Agentic AI systems</strong> using the latest
+              LLM orchestration frameworks. My AI work focuses on autonomous agents that reason, plan, and
+              execute multi-step workflows — going far beyond simple prompt engineering.
+            </p>
+            <ul>
+              <li><strong>LangChain &amp; LangGraph</strong> — multi-step agent graphs with conditional routing, memory, and tool use</li>
+              <li><strong>Agentic Workflows</strong> — autonomous campaign lifecycle management (create → schedule → publish → optimise)</li>
+              <li><strong>RAG Pipelines</strong> — retrieval-augmented generation for domain-specific knowledge in fintech</li>
+              <li><strong>LLM Tool Calling</strong> — function-calling agents integrated with internal APIs and databases</li>
+              <li><strong>Prompt Engineering at Scale</strong> — structured output, chain-of-thought, and few-shot techniques in production</li>
+              <li><strong>AI Observability</strong> — tracing agent execution, latency profiling, and hallucination guardrails</li>
+            </ul>
+            <div class="skills-grid" style="margin-top:1.2rem;">
+              <span class="badge-pill badge-ai">LangChain</span>
+              <span class="badge-pill badge-ai">LangGraph</span>
+              <span class="badge-pill badge-ai">Agentic AI</span>
+              <span class="badge-pill badge-ai">RAG</span>
+              <span class="badge-pill badge-ai">LLM Tool Calling</span>
+              <span class="badge-pill badge-ai">Prompt Engineering</span>
+              <span class="badge-pill badge-ai">Generative AI</span>
+              <span class="badge-pill badge-ai">AI Orchestration</span>
+            </div>
+          </div>
+
+          <!-- Project 1: Agentic AI Platform -->
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Project Title 0</h3>
+                <h3 class="project-wrapper__text-title">Agentic AI — Campaign Automation</h3>
                 <div>
                   <p class="mb-4">
-                    Describe the project being very specific, you can use the Twitter standard: no more than 280 characters: 
-                    complement the information: the skills learned or reinforced in its realization and how you faced it, 
-                    prove to be proactive in the search for solutions.
+                    Architected and shipped a full <strong>Agentic AI platform</strong> at Intuit using
+                    <strong>LangChain and LangGraph</strong>. The agent autonomously creates, schedules,
+                    and manages promotional campaigns — reducing marketing operations time by <strong>30%</strong>
+                    and serving 70M+ customers globally. Built with multi-step graph execution, conditional
+                    routing, and LLM tool-calling integrated into Intuit's GTM infrastructure.
                   </p>
+                  <div class="skills-grid mb-3">
+                    <span class="badge-pill badge-ai">LangChain</span>
+                    <span class="badge-pill badge-ai">LangGraph</span>
+                    <span class="badge-pill badge-java">Java</span>
+                    <span class="badge-pill badge-infra">Spring Boot</span>
+                  </div>
                 </div>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--hero"
-                  href="#!"
-                >
-                  See Live
-                </a>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn text-color-main"
-                  href="#!"
-                >
-                  Source Code
-                </a>
               </div>
             </div>
             <div class="col-lg-8 col-sm-12">
               <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/project.jpg"
-                    />
-                  </div>
-                </a>
+                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5" class="thumbnail rounded js-tilt">
+                  <!-- SVG: Agentic AI — neural graph with flowing agent nodes -->
+                  <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;background:#0d0d1a;border-radius:8px;">
+                    <defs>
+                      <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#6c63ff" stop-opacity="0.6"/>
+                        <stop offset="100%" stop-color="#6c63ff" stop-opacity="0"/>
+                      </radialGradient>
+                      <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#48c9b0" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#48c9b0" stop-opacity="0"/>
+                      </radialGradient>
+                      <filter id="blur1"><feGaussianBlur stdDeviation="6"/></filter>
+                      <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                        <path d="M0,0 L0,6 L6,3 z" fill="#6c63ff" opacity="0.8"/>
+                      </marker>
+                    </defs>
+                    <!-- Background grid -->
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.2" opacity="0.08"/>
+                    </pattern>
+                    <rect width="600" height="340" fill="url(#grid)"/>
+                    <!-- Glow blobs -->
+                    <ellipse cx="300" cy="170" rx="180" ry="120" fill="url(#glow1)" filter="url(#blur1)"/>
+                    <ellipse cx="480" cy="80" rx="80" ry="60" fill="url(#glow2)" filter="url(#blur1)"/>
+                    <!-- Edges / connections -->
+                    <line x1="120" y1="170" x2="220" y2="110" stroke="#6c63ff" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow)"/>
+                    <line x1="120" y1="170" x2="220" y2="230" stroke="#6c63ff" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow)"/>
+                    <line x1="220" y1="110" x2="340" y2="80"  stroke="#48c9b0" stroke-width="1.5" opacity="0.7" marker-end="url(#arrow)"/>
+                    <line x1="220" y1="110" x2="340" y2="170" stroke="#48c9b0" stroke-width="1.5" opacity="0.7" marker-end="url(#arrow)"/>
+                    <line x1="220" y1="230" x2="340" y2="170" stroke="#48c9b0" stroke-width="1.5" opacity="0.7" marker-end="url(#arrow)"/>
+                    <line x1="220" y1="230" x2="340" y2="260" stroke="#48c9b0" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow)"/>
+                    <line x1="340" y1="80"  x2="470" y2="120" stroke="#6c63ff" stroke-width="1.5" opacity="0.7" marker-end="url(#arrow)"/>
+                    <line x1="340" y1="170" x2="470" y2="120" stroke="#6c63ff" stroke-width="1.5" opacity="0.7" marker-end="url(#arrow)"/>
+                    <line x1="340" y1="170" x2="470" y2="220" stroke="#6c63ff" stroke-width="1.5" opacity="0.7" marker-end="url(#arrow)"/>
+                    <line x1="340" y1="260" x2="470" y2="220" stroke="#6c63ff" stroke-width="1.5" opacity="0.6" marker-end="url(#arrow)"/>
+                    <!-- Nodes -->
+                    <circle cx="120" cy="170" r="22" fill="#1a1a2e" stroke="#6c63ff" stroke-width="2.5"/>
+                    <text x="120" y="167" text-anchor="middle" fill="#6c63ff" font-size="9" font-family="monospace">LLM</text>
+                    <text x="120" y="178" text-anchor="middle" fill="#6c63ff" font-size="9" font-family="monospace">Agent</text>
+
+                    <circle cx="220" cy="110" r="20" fill="#1a1a2e" stroke="#48c9b0" stroke-width="2"/>
+                    <text x="220" y="106" text-anchor="middle" fill="#48c9b0" font-size="8" font-family="monospace">Plan</text>
+                    <text x="220" y="117" text-anchor="middle" fill="#48c9b0" font-size="8" font-family="monospace">Node</text>
+
+                    <circle cx="220" cy="230" r="20" fill="#1a1a2e" stroke="#48c9b0" stroke-width="2"/>
+                    <text x="220" y="226" text-anchor="middle" fill="#48c9b0" font-size="8" font-family="monospace">Tool</text>
+                    <text x="220" y="237" text-anchor="middle" fill="#48c9b0" font-size="8" font-family="monospace">Node</text>
+
+                    <circle cx="340" cy="80"  r="20" fill="#1a1a2e" stroke="#6c63ff" stroke-width="2"/>
+                    <text x="340" y="76" text-anchor="middle" fill="#6c63ff" font-size="8" font-family="monospace">Fetch</text>
+                    <text x="340" y="87" text-anchor="middle" fill="#6c63ff" font-size="8" font-family="monospace">Tool</text>
+
+                    <circle cx="340" cy="170" r="24" fill="#1a1a2e" stroke="#48c9b0" stroke-width="3"/>
+                    <text x="340" y="166" text-anchor="middle" fill="#48c9b0" font-size="9" font-weight="bold" font-family="monospace">Lang</text>
+                    <text x="340" y="178" text-anchor="middle" fill="#48c9b0" font-size="9" font-weight="bold" font-family="monospace">Graph</text>
+
+                    <circle cx="340" cy="260" r="20" fill="#1a1a2e" stroke="#6c63ff" stroke-width="2"/>
+                    <text x="340" y="256" text-anchor="middle" fill="#6c63ff" font-size="8" font-family="monospace">Write</text>
+                    <text x="340" y="267" text-anchor="middle" fill="#6c63ff" font-size="8" font-family="monospace">Tool</text>
+
+                    <circle cx="470" cy="120" r="22" fill="#1a1a2e" stroke="#48c9b0" stroke-width="2.5"/>
+                    <text x="470" y="116" text-anchor="middle" fill="#48c9b0" font-size="8" font-family="monospace">GTM</text>
+                    <text x="470" y="127" text-anchor="middle" fill="#48c9b0" font-size="8" font-family="monospace">API</text>
+
+                    <circle cx="470" cy="220" r="22" fill="#1a1a2e" stroke="#48c9b0" stroke-width="2.5"/>
+                    <text x="470" y="216" text-anchor="middle" fill="#48c9b0" font-size="8" font-family="monospace">DB</text>
+                    <text x="470" y="227" text-anchor="middle" fill="#48c9b0" font-size="8" font-family="monospace">Store</text>
+
+                    <!-- Animated pulse on LangGraph node -->
+                    <circle cx="340" cy="170" r="24" fill="none" stroke="#48c9b0" stroke-width="1" opacity="0.5">
+                      <animate attributeName="r" values="24;38;24" dur="2.5s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+
+                    <!-- Label -->
+                    <text x="300" y="320" text-anchor="middle" fill="#ffffff" opacity="0.35" font-size="11" font-family="monospace">Agentic AI · LangChain + LangGraph · Intuit GTM</text>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
           <!-- /END Project -->
 
-          <!-- Notice: each .row is a project -->
+          <!-- Project 2: Mapper Framework -->
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Project Title 1</h3>
+                <h3 class="project-wrapper__text-title">Mapper Framework — 90% Latency Cut</h3>
                 <div>
                   <p class="mb-4">
-                    Demonstrate in this description the skills of a programmer: such as having commitment, 
-                    having perseverance and accepting alternative solutions. Remember that being a portfolio you are not selling the project, 
-                    you are selling yourself, it reflects the resources used: Frameworks, libraries, platforms, etc.
+                    Designed and implemented a <strong>Mapper Framework</strong> for multi-downstream
+                    service communication across Intuit's GTM platform. Eliminated cascading bottlenecks
+                    in distributed service chains, achieving a <strong>90% reduction in API latency</strong>
+                    end-to-end. The framework standardised inter-service contracts and became the
+                    organisation-wide standard for downstream communication.
                   </p>
+                  <div class="skills-grid mb-3">
+                    <span class="badge-pill badge-java">Java</span>
+                    <span class="badge-pill badge-infra">Microservices</span>
+                    <span class="badge-pill badge-infra">REST APIs</span>
+                    <span class="badge-pill badge-infra">PostgreSQL</span>
+                  </div>
                 </div>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--hero"
-                  href="#!"
-                >
-                  See Live
-                </a>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn text-color-main"
-                  href="#!"
-                >
-                  Source Code
-                </a>
               </div>
             </div>
             <div class="col-lg-8 col-sm-12">
               <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/project.jpg"
-                    />
-                  </div>
-                </a>
+                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5" class="thumbnail rounded js-tilt">
+                  <!-- SVG: Mapper Framework — service mesh / latency funnel -->
+                  <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;background:#0a0d1a;border-radius:8px;">
+                    <defs>
+                      <linearGradient id="mgA" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#e07b39"/>
+                        <stop offset="100%" stop-color="#6c63ff"/>
+                      </linearGradient>
+                      <linearGradient id="mgB" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#6c63ff"/>
+                        <stop offset="100%" stop-color="#48c9b0"/>
+                      </linearGradient>
+                      <filter id="mblur"><feGaussianBlur stdDeviation="5"/></filter>
+                    </defs>
+                    <pattern id="mgrid" width="30" height="30" patternUnits="userSpaceOnUse">
+                      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#fff" stroke-width="0.15" opacity="0.06"/>
+                    </pattern>
+                    <rect width="600" height="340" fill="url(#mgrid)"/>
+                    <!-- Glow -->
+                    <ellipse cx="300" cy="170" rx="200" ry="100" fill="#6c63ff" opacity="0.07" filter="url(#mblur)"/>
+                    <!-- Source services (left) -->
+                    <rect x="30" y="60"  width="90" height="36" rx="8" fill="#1a1a2e" stroke="#e07b39" stroke-width="1.8"/>
+                    <text x="75" y="83" text-anchor="middle" fill="#e07b39" font-size="10" font-family="monospace">Service A</text>
+                    <rect x="30" y="120" width="90" height="36" rx="8" fill="#1a1a2e" stroke="#e07b39" stroke-width="1.8"/>
+                    <text x="75" y="143" text-anchor="middle" fill="#e07b39" font-size="10" font-family="monospace">Service B</text>
+                    <rect x="30" y="180" width="90" height="36" rx="8" fill="#1a1a2e" stroke="#e07b39" stroke-width="1.8"/>
+                    <text x="75" y="203" text-anchor="middle" fill="#e07b39" font-size="10" font-family="monospace">Service C</text>
+                    <rect x="30" y="240" width="90" height="36" rx="8" fill="#1a1a2e" stroke="#e07b39" stroke-width="1.8"/>
+                    <text x="75" y="263" text-anchor="middle" fill="#e07b39" font-size="10" font-family="monospace">Service D</text>
+                    <!-- Lines into Mapper -->
+                    <line x1="120" y1="78"  x2="220" y2="155" stroke="url(#mgA)" stroke-width="1.5" opacity="0.7"/>
+                    <line x1="120" y1="138" x2="220" y2="160" stroke="url(#mgA)" stroke-width="1.5" opacity="0.7"/>
+                    <line x1="120" y1="198" x2="220" y2="168" stroke="url(#mgA)" stroke-width="1.5" opacity="0.7"/>
+                    <line x1="120" y1="258" x2="220" y2="175" stroke="url(#mgA)" stroke-width="1.5" opacity="0.7"/>
+                    <!-- Mapper box -->
+                    <rect x="220" y="130" width="130" height="80" rx="12" fill="#1a1a2e" stroke="url(#mgB)" stroke-width="2.5"/>
+                    <text x="285" y="164" text-anchor="middle" fill="#6c63ff" font-size="12" font-weight="bold" font-family="monospace">MAPPER</text>
+                    <text x="285" y="180" text-anchor="middle" fill="#48c9b0" font-size="9" font-family="monospace">FRAMEWORK</text>
+                    <text x="285" y="200" text-anchor="middle" fill="#ffffff" font-size="8" opacity="0.5" font-family="monospace">90% latency ↓</text>
+                    <!-- Pulse ring on mapper -->
+                    <rect x="220" y="130" width="130" height="80" rx="12" fill="none" stroke="#6c63ff" stroke-width="1" opacity="0.4">
+                      <animate attributeName="stroke-width" values="1;3;1" dur="2s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/>
+                    </rect>
+                    <!-- Lines out of Mapper -->
+                    <line x1="350" y1="160" x2="450" y2="100" stroke="url(#mgB)" stroke-width="1.5" opacity="0.8"/>
+                    <line x1="350" y1="168" x2="450" y2="180" stroke="url(#mgB)" stroke-width="1.5" opacity="0.8"/>
+                    <line x1="350" y1="175" x2="450" y2="260" stroke="url(#mgB)" stroke-width="1.5" opacity="0.7"/>
+                    <!-- Downstream targets (right) -->
+                    <rect x="450" y="80"  width="100" height="36" rx="8" fill="#1a1a2e" stroke="#48c9b0" stroke-width="1.8"/>
+                    <text x="500" y="103" text-anchor="middle" fill="#48c9b0" font-size="10" font-family="monospace">GTM API</text>
+                    <rect x="450" y="162" width="100" height="36" rx="8" fill="#1a1a2e" stroke="#48c9b0" stroke-width="1.8"/>
+                    <text x="500" y="185" text-anchor="middle" fill="#48c9b0" font-size="10" font-family="monospace">MarTech</text>
+                    <rect x="450" y="242" width="100" height="36" rx="8" fill="#1a1a2e" stroke="#48c9b0" stroke-width="1.8"/>
+                    <text x="500" y="265" text-anchor="middle" fill="#48c9b0" font-size="10" font-family="monospace">Offers DB</text>
+                    <text x="300" y="320" text-anchor="middle" fill="#fff" opacity="0.3" font-size="11" font-family="monospace">Mapper Framework · Distributed GTM Platform · Intuit</text>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
           <!-- /END Project -->
 
-          <!-- Notice: each .row is a project -->
+          <!-- Project 3: Kafka Real-Time Offer Cache -->
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Project Title 2</h3>
+                <h3 class="project-wrapper__text-title">Real-Time Offer Cache — Kafka</h3>
                 <div>
                   <p class="mb-4">
-                    If the project was collaborative, reflect it in this description, that will demonstrate communication and/or leadership skills. 
-                    Additionally, if you made use of the mastery of a second language, it will reflect on you professionalism.
+                    Built a real-time offer cache update system using <strong>Apache Kafka</strong> with
+                    Batch Processing and Round-Robin distribution strategy, improving Kafka throughput by
+                    <strong>40%</strong>. Ensures offer consistency across all distributed systems globally.
+                    Also engineered <strong>Localisation support</strong> for all offer payloads, enabling
+                    multi-country deployments with zero additional latency.
                   </p>
+                  <div class="skills-grid mb-3">
+                    <span class="badge-pill badge-infra">Apache Kafka</span>
+                    <span class="badge-pill badge-infra">Spring Batch</span>
+                    <span class="badge-pill badge-java">Java</span>
+                    <span class="badge-pill badge-infra">Redis</span>
+                  </div>
                 </div>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--hero"
-                  href="#!"
-                >
-                  See Live
-                </a>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn text-color-main"
-                  href="#!"
-                >
-                  Source Code
-                </a>
               </div>
             </div>
             <div class="col-lg-8 col-sm-12">
               <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div
-                    data-tilt
-                    data-tilt-max="4"
-                    data-tilt-glare="true"
-                    data-tilt-max-glare="0.5"
-                    class="thumbnail rounded js-tilt"
-                  >
-                    <img
-                      alt="Project Image"
-                      class="img-fluid"
-                      src="assets/project.jpg"
-                    />
-                  </div>
-                </a>
+                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5" class="thumbnail rounded js-tilt">
+                  <!-- SVG: Kafka Real-Time Offer Cache — event stream pipeline -->
+                  <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;background:#080d14;border-radius:8px;">
+                    <defs>
+                      <linearGradient id="kg1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#48c9b0"/>
+                        <stop offset="100%" stop-color="#6c63ff"/>
+                      </linearGradient>
+                      <filter id="kblur"><feGaussianBlur stdDeviation="7"/></filter>
+                    </defs>
+                    <pattern id="kgrid" width="35" height="35" patternUnits="userSpaceOnUse">
+                      <path d="M 35 0 L 0 0 0 35" fill="none" stroke="#fff" stroke-width="0.15" opacity="0.06"/>
+                    </pattern>
+                    <rect width="600" height="340" fill="url(#kgrid)"/>
+                    <ellipse cx="300" cy="170" rx="220" ry="90" fill="#48c9b0" opacity="0.05" filter="url(#kblur)"/>
+
+                    <!-- Producer box -->
+                    <rect x="20" y="130" width="100" height="80" rx="10" fill="#0f1b2d" stroke="#48c9b0" stroke-width="2"/>
+                    <text x="70" y="162" text-anchor="middle" fill="#48c9b0" font-size="10" font-weight="bold" font-family="monospace">PRODUCER</text>
+                    <text x="70" y="178" text-anchor="middle" fill="#48c9b0" font-size="8" font-family="monospace">Offer</text>
+                    <text x="70" y="190" text-anchor="middle" fill="#48c9b0" font-size="8" font-family="monospace">Events</text>
+
+                    <!-- Kafka broker (center) -->
+                    <rect x="190" y="90" width="220" height="160" rx="14" fill="#0f1b2d" stroke="url(#kg1)" stroke-width="2.5"/>
+                    <text x="300" y="118" text-anchor="middle" fill="#6c63ff" font-size="13" font-weight="bold" font-family="monospace">KAFKA</text>
+                    <text x="300" y="134" text-anchor="middle" fill="#48c9b0" font-size="9" font-family="monospace">Topic: offer-updates</text>
+                    <!-- Partition bars -->
+                    <rect x="208" y="148" width="184" height="18" rx="4" fill="#1a2a3a" stroke="#6c63ff" stroke-width="1"/>
+                    <rect x="208" y="148" width="110" height="18" rx="4" fill="#6c63ff" opacity="0.5"/>
+                    <text x="300" y="161" text-anchor="middle" fill="#fff" font-size="8" font-family="monospace">Partition 0 — Batch</text>
+                    <rect x="208" y="174" width="184" height="18" rx="4" fill="#1a2a3a" stroke="#48c9b0" stroke-width="1"/>
+                    <rect x="208" y="174" width="140" height="18" rx="4" fill="#48c9b0" opacity="0.4"/>
+                    <text x="300" y="187" text-anchor="middle" fill="#fff" font-size="8" font-family="monospace">Partition 1 — Round-Robin</text>
+                    <rect x="208" y="200" width="184" height="18" rx="4" fill="#1a2a3a" stroke="#6c63ff" stroke-width="1"/>
+                    <rect x="208" y="200" width="80"  height="18" rx="4" fill="#6c63ff" opacity="0.35"/>
+                    <text x="300" y="213" text-anchor="middle" fill="#fff" font-size="8" font-family="monospace">Partition 2 — Overflow</text>
+                    <text x="300" y="237" text-anchor="middle" fill="#fff" opacity="0.4" font-size="8" font-family="monospace">40% throughput ↑</text>
+
+                    <!-- Arrow producer → kafka -->
+                    <line x1="120" y1="170" x2="188" y2="170" stroke="#48c9b0" stroke-width="2" opacity="0.8"/>
+                    <polygon points="188,165 198,170 188,175" fill="#48c9b0" opacity="0.8"/>
+                    <!-- Animated packets -->
+                    <circle r="5" fill="#48c9b0" opacity="0.9">
+                      <animateMotion dur="1.8s" repeatCount="indefinite" path="M120,170 L188,170"/>
+                      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.8s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle r="5" fill="#6c63ff" opacity="0.9">
+                      <animateMotion dur="1.8s" begin="0.6s" repeatCount="indefinite" path="M120,170 L188,170"/>
+                      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+                    </circle>
+
+                    <!-- Arrow kafka → consumers -->
+                    <line x1="412" y1="140" x2="470" y2="110" stroke="url(#kg1)" stroke-width="1.8" opacity="0.8"/>
+                    <line x1="412" y1="170" x2="470" y2="170" stroke="url(#kg1)" stroke-width="1.8" opacity="0.8"/>
+                    <line x1="412" y1="200" x2="470" y2="230" stroke="url(#kg1)" stroke-width="1.8" opacity="0.8"/>
+
+                    <!-- Consumer boxes -->
+                    <rect x="470" y="88"  width="100" height="44" rx="8" fill="#0f1b2d" stroke="#48c9b0" stroke-width="1.8"/>
+                    <text x="520" y="107" text-anchor="middle" fill="#48c9b0" font-size="9" font-family="monospace">Redis</text>
+                    <text x="520" y="121" text-anchor="middle" fill="#48c9b0" font-size="9" font-family="monospace">Cache</text>
+
+                    <rect x="470" y="148" width="100" height="44" rx="8" fill="#0f1b2d" stroke="#6c63ff" stroke-width="1.8"/>
+                    <text x="520" y="167" text-anchor="middle" fill="#6c63ff" font-size="9" font-family="monospace">Offers</text>
+                    <text x="520" y="181" text-anchor="middle" fill="#6c63ff" font-size="9" font-family="monospace">Service</text>
+
+                    <rect x="470" y="208" width="100" height="44" rx="8" fill="#0f1b2d" stroke="#48c9b0" stroke-width="1.8"/>
+                    <text x="520" y="227" text-anchor="middle" fill="#48c9b0" font-size="9" font-family="monospace">Global</text>
+                    <text x="520" y="241" text-anchor="middle" fill="#48c9b0" font-size="9" font-family="monospace">Sync</text>
+
+                    <text x="300" y="318" text-anchor="middle" fill="#fff" opacity="0.3" font-size="11" font-family="monospace">Kafka · Batch Processing · Real-Time Offer Cache · Intuit</text>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
           <!-- /END Project -->
+
         </div>
       </div>
     </section>
     <!-- /END Projects Section -->
 
+    <!-- **** Experience Section **** -->
+    <section id="experience" style="padding: 6rem 0;">
+      <div class="container">
+        <h2 class="section-title load-hidden" style="text-align:center; margin-bottom:3rem;">Experience</h2>
+        <div class="timeline load-hidden">
+
+          <div class="timeline-item">
+            <div class="timeline-date">Aug 2022 – Present</div>
+            <div class="timeline-company">Intuit · Bengaluru, India</div>
+            <h4 style="margin: 0.3rem 0 0.6rem;">Senior Software Engineer — GTM Tech &amp; Monetisation</h4>
+            <ul style="opacity:0.85; line-height:1.8;">
+              <li>Architected <strong>Agentic AI platform</strong> (LangChain + LangGraph) — 30% ops time reduction, 70M+ customers</li>
+              <li>Designed <strong>Mapper Framework</strong> — 90% API latency reduction across GTM platform</li>
+              <li>Built <strong>Kafka real-time offer cache</strong> with Batch + Round-Robin — 40% throughput improvement</li>
+              <li>Engineered <strong>Localisation support</strong> for global offer payloads (Spring Boot, Java, PostgreSQL)</li>
+              <li>Led <strong>AI Manager Initiative</strong> — architectural &amp; security benchmarks org-wide</li>
+              <li>Achieved <strong>0% Operational Issues</strong> — 100% uptime via Splunk observability</li>
+              <li>Extended <strong>Canada region</strong> offer profile infrastructure (GTM Tech, MarTech)</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 2021 – Jun 2022</div>
+            <div class="timeline-company">athenahealth · Chennai, India</div>
+            <h4 style="margin: 0.3rem 0 0.6rem;">Member of Technical Staff</h4>
+            <ul style="opacity:0.85; line-height:1.8;">
+              <li>Designed microservices to deprecate a legacy <strong>Perl monolith</strong> — improved maintainability across healthcare infra</li>
+              <li>Engineered <strong>Experimentation-as-a-Service</strong> platform using Redis + Config Management for feature rollouts</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">May 2019 – Oct 2021</div>
+            <div class="timeline-company">Zoho Corporation · Chennai, India</div>
+            <h4 style="margin: 0.3rem 0 0.6rem;">Member of Technical Staff</h4>
+            <ul style="opacity:0.85; line-height:1.8;">
+              <li>Developed <strong>Desktop Software Deployment Module</strong> in DesktopCentral — enterprise patch management</li>
+              <li>Built <strong>Automation Testing Framework</strong> (Jenkins, JUnit, Selenium) — eliminated manual QA</li>
+              <li>Developed native <strong>C++ validation app</strong> — reduced deployment failures across enterprise environments</li>
+              <li>Engineered <strong>cross-platform native apps</strong> in Java, Python, C++ for Windows, Mac, Linux</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Dec 2018 – Apr 2019</div>
+            <div class="timeline-company">Zoho Corporation · Chennai, India</div>
+            <h4 style="margin: 0.3rem 0 0.6rem;">Project Trainee</h4>
+            <ul style="opacity:0.85; line-height:1.8;">
+              <li>Architected <strong>Web Scraping application</strong> (Python, BeautifulSoup, Selenium) automating version detection for 100+ applications</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /END Experience Section -->
+
+    <!-- **** Skills Section **** -->
+    <section id="skills-section" style="padding: 5rem 0;">
+      <div class="container">
+        <h2 class="section-title load-hidden" style="text-align:center; margin-bottom:2.5rem;">Technical Skills</h2>
+
+        <div class="row load-hidden">
+          <div class="col-md-6 mb-4">
+            <h5 style="color:#48c9b0; margin-bottom:0.8rem;">AI / Machine Learning</h5>
+            <div class="skills-grid">
+              <span class="badge-pill badge-ai">LangChain</span>
+              <span class="badge-pill badge-ai">LangGraph</span>
+              <span class="badge-pill badge-ai">Generative AI</span>
+              <span class="badge-pill badge-ai">Agentic AI</span>
+              <span class="badge-pill badge-ai">RAG</span>
+              <span class="badge-pill badge-ai">Prompt Engineering</span>
+              <span class="badge-pill badge-ai">LLM Tool Use</span>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <h5 style="color:#48c9b0; margin-bottom:0.8rem;">Languages</h5>
+            <div class="skills-grid">
+              <span class="badge-pill badge-java">Java</span>
+              <span class="badge-pill badge-java">Python</span>
+              <span class="badge-pill badge-java">C / C++</span>
+              <span class="badge-pill badge-java">SQL</span>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <h5 style="color:#48c9b0; margin-bottom:0.8rem;">Frameworks &amp; Backends</h5>
+            <div class="skills-grid">
+              <span class="badge-pill badge-infra">Spring Boot</span>
+              <span class="badge-pill badge-infra">Spring Batch</span>
+              <span class="badge-pill badge-infra">Hibernate / JPA</span>
+              <span class="badge-pill badge-infra">REST APIs</span>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <h5 style="color:#48c9b0; margin-bottom:0.8rem;">Messaging &amp; Data</h5>
+            <div class="skills-grid">
+              <span class="badge-pill badge-infra">Apache Kafka</span>
+              <span class="badge-pill badge-infra">Apache Spark</span>
+              <span class="badge-pill badge-infra">PostgreSQL</span>
+              <span class="badge-pill badge-infra">Redis</span>
+              <span class="badge-pill badge-infra">AWS S3</span>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <h5 style="color:#48c9b0; margin-bottom:0.8rem;">DevOps &amp; Cloud</h5>
+            <div class="skills-grid">
+              <span class="badge-pill badge-infra">Docker</span>
+              <span class="badge-pill badge-infra">Kubernetes</span>
+              <span class="badge-pill badge-infra">Jenkins</span>
+              <span class="badge-pill badge-infra">Git / CI-CD</span>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <h5 style="color:#48c9b0; margin-bottom:0.8rem;">Observability &amp; Testing</h5>
+            <div class="skills-grid">
+              <span class="badge-pill badge-infra">Splunk</span>
+              <span class="badge-pill badge-infra">Grafana</span>
+              <span class="badge-pill badge-infra">JUnit / Mockito</span>
+              <span class="badge-pill badge-infra">Selenium</span>
+              <span class="badge-pill badge-infra">Sonar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END Skills Section -->
+
     <!-- **** Contact Section **** -->
     <section id="contact">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title">Let's Build Something with AI</h2>
         <div class="contact-wrapper load-hidden">
-          <p class="contact-wrapper__text">[Put your call to action here]</p>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            class="cta-btn cta-btn--resume"
-            href="mailto:example@email.com"
-            >Call to Action</a
-          >
+          <p class="contact-wrapper__text">
+            Interested in Generative AI, Agentic systems, or distributed fintech platforms? Let's connect.
+          </p>
+          <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="mailto:veeramuthu408@gmail.com">
+            Say Hello
+          </a>
         </div>
       </div>
     </section>
@@ -292,49 +646,18 @@
           <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
         </a>
         <div class="social-links">
-          <a rel="noreferrer" href="#!" target="_blank">
-            <i class="fa fa-twitter fa-inverse"></i>
-          </a>
-          <a rel="noreferrer" href="#!" target="_blank">
+          <a rel="noreferrer" href="https://linkedin.com/in/angu" target="_blank">
             <i class="fa fa-linkedin fa-inverse"></i>
           </a>
-          <a rel="noreferrer" href="#!" target="_blank">
-            <i class="fa fa-github fa-inverse"></i>
+          <a rel="noreferrer" href="mailto:veeramuthu408@gmail.com" target="_blank">
+            <i class="fa fa-envelope fa-inverse"></i>
           </a>
         </div>
 
         <hr />
 
-        <!-- Notice: if you want to give me some credit, it will be huge for me! if not, put your data on it -->
         <p class="footer__text">
-          © 2021 - Template developed by
-          <a rel="noreferrer" href="https://github.com/cobiwave" target="_blank"
-            >Jacobo Martínez</a
-          >
-        </p>
-
-        <!-- TO DO: remove this entire paragraph once you finish your portfolio -->
-        <p class="mt-3 pt-3">
-          <a
-            rel="noreferrer"
-            class="github-button"
-            href="https://github.com/cobiwave/simplefolio/fork"
-            data-icon="octicon-repo-forked"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Fork ntkme/github-buttons on GitHub"
-            >Fork</a
-          >
-          <a
-            rel="noreferrer" 
-            class="github-button"
-            href="https://github.com/cobiwave/simplefolio"
-            data-icon="octicon-star"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star cobiwave/simplefolio on GitHub"
-            >Star</a
-          >
+          © 2026 — Anguchamy Periyakaruppan · Senior Software Engineer, Generative AI &amp; Distributed Systems
         </p>
       </div>
     </footer>
