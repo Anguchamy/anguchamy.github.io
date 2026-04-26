@@ -9,6 +9,10 @@
     <title>Anguchamy Periyakaruppan | Senior Software Engineer — Generative AI</title>
     <meta name="keywords" content="anguchamy, periyakaruppan, generative AI, LangChain, LangGraph, agentic AI, senior software engineer, distributed systems, Intuit" />
     <meta name="description" content="Senior Software Engineer with 7+ years building Generative AI platforms, agentic systems, and large-scale distributed infrastructure at Intuit." />
+    <meta property="og:title" content="Anguchamy Periyakaruppan | Senior Software Engineer — Generative AI" />
+    <meta property="og:description" content="Senior Software Engineer with 7+ years building Generative AI platforms, agentic systems, and large-scale distributed infrastructure at Intuit." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="styles.scss" />
@@ -77,11 +81,150 @@
       #about { background: var(--secondary-color, #0d0d0d); }
       #experience { padding: 6rem 0; }
       #skills-section { padding: 5rem 0; background: rgba(108,99,255,0.04); }
+
+      /* ── Typed cursor ── */
+      .typed-cursor {
+        display: inline-block;
+        animation: blink 1s step-end infinite;
+        color: #48c9b0;
+      }
+      @keyframes blink { 50% { opacity: 0; } }
+
+      /* ── Open to work badge ── */
+      .open-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(72,201,176,0.15);
+        border: 1px solid rgba(72,201,176,0.5);
+        border-radius: 999px;
+        padding: 5px 14px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #48c9b0;
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.04em;
+      }
+      .open-badge::before {
+        content: '';
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        background: #48c9b0;
+        animation: pulse-dot 1.5s ease-in-out infinite;
+      }
+      @keyframes pulse-dot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.7); }
+      }
+
+      /* ── Hero sub-role typed line ── */
+      .hero-sub {
+        font-size: 1.8rem;
+        opacity: 0.75;
+        margin-top: -1.5rem;
+        margin-bottom: 2.5rem;
+        font-family: monospace;
+        letter-spacing: 0.03em;
+      }
+
+      /* ── Nav dots ── */
+      .nav-dots {
+        position: fixed;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 999;
+      }
+      .nav-dot {
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.25);
+        border: 2px solid rgba(255,255,255,0.4);
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+      .nav-dot:hover, .nav-dot.active {
+        background: #48c9b0;
+        border-color: #48c9b0;
+        transform: scale(1.3);
+      }
+      @media (max-width: 768px) { .nav-dots { display: none; } }
+
+      /* ── Project GitHub/Demo buttons ── */
+      .project-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1rem; }
+      .btn-project {
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.25s;
+        border: 1px solid;
+      }
+      .btn-project--github {
+        border-color: rgba(108,99,255,0.6);
+        color: #6c63ff;
+        background: rgba(108,99,255,0.08);
+      }
+      .btn-project--github:hover {
+        background: #6c63ff;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* ── Contact social row ── */
+      .contact-social { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; justify-content: center; }
+      .contact-social a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 22px;
+        border-radius: 8px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: 2px solid rgba(255,255,255,0.6);
+        color: #fff;
+        transition: all 0.25s;
+      }
+      .contact-social a:hover {
+        background: rgba(255,255,255,0.15);
+        border-color: #fff;
+        text-decoration: none;
+        transform: translateY(-2px);
+      }
+
+      /* ── Scroll progress bar ── */
+      #scroll-progress {
+        position: fixed;
+        top: 0; left: 0;
+        height: 3px;
+        width: 0%;
+        background: linear-gradient(90deg, #6c63ff, #48c9b0);
+        z-index: 9999;
+        transition: width 0.1s linear;
+      }
     </style>
   </head>
 
   <body>
+    <div id="scroll-progress"></div>
     <div id="top"></div>
+
+    <!-- Nav dots -->
+    <nav class="nav-dots" aria-label="Page sections">
+      <a class="nav-dot" href="#hero"       title="Home"></a>
+      <a class="nav-dot" href="#about"      title="About"></a>
+      <a class="nav-dot" href="#projects"   title="Projects"></a>
+      <a class="nav-dot" href="#experience" title="Experience"></a>
+      <a class="nav-dot" href="#skills-section" title="Skills"></a>
+      <a class="nav-dot" href="#contact"    title="Contact"></a>
+    </nav>
 
     <!-- **** Hero Section **** -->
     <section id="hero" class="jumbotron">
@@ -91,8 +234,11 @@
           <br />
           I build <span class="text-color-main">Generative AI</span> &amp; Distributed Systems.
         </h1>
+        <p class="hero-sub load-hidden">&gt; <span id="typed-role"></span><span class="typed-cursor">|</span></p>
         <p class="hero-cta load-hidden">
           <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">Explore My Work</a>
+          &nbsp;&nbsp;
+          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#contact">Get In Touch</a>
         </p>
       </div>
     </section>
@@ -116,6 +262,7 @@
           </div>
           <div class="col-md-6 col-sm-12">
             <div class="about-wrapper__info load-hidden">
+              <div class="open-badge">Open to Global Opportunities</div>
               <p class="about-wrapper__info-text">
                 Senior Software Engineer with <strong>7+ years</strong> of experience designing large-scale
                 distributed systems and <strong>Generative AI platforms</strong>. Currently at
@@ -213,6 +360,11 @@
                     <span class="badge-pill badge-ai">LangGraph</span>
                     <span class="badge-pill badge-java">Java</span>
                     <span class="badge-pill badge-infra">Spring Boot</span>
+                  </div>
+                  <div class="project-btns">
+                    <a class="btn-project btn-project--github" href="https://github.com/Anguchamy" target="_blank" rel="noreferrer">
+                      <i class="fa fa-github"></i> GitHub
+                    </a>
                   </div>
                 </div>
               </div>
@@ -491,6 +643,102 @@
           </div>
           <!-- /END Project -->
 
+          <!-- Project 4: Experimentation-as-a-Service -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Experimentation-as-a-Service — athenahealth</h3>
+                <div>
+                  <p class="mb-4">
+                    Engineered a self-serve <strong>Experimentation-as-a-Service</strong> platform at athenahealth,
+                    enabling product teams to run controlled feature rollouts without engineering dependencies.
+                    Backed by <strong>Redis</strong> for real-time flag evaluation and a config management
+                    layer for instant rollback. Ran in parallel with a microservices migration that
+                    deprecated a legacy <strong>Perl monolith</strong>, improving system maintainability across
+                    healthcare infrastructure.
+                  </p>
+                  <div class="skills-grid mb-3">
+                    <span class="badge-pill badge-infra">Redis</span>
+                    <span class="badge-pill badge-infra">Feature Flags</span>
+                    <span class="badge-pill badge-java">Java</span>
+                    <span class="badge-pill badge-infra">Microservices</span>
+                  </div>
+                  <div class="project-btns">
+                    <a class="btn-project btn-project--github" href="https://github.com/Anguchamy" target="_blank" rel="noreferrer">
+                      <i class="fa fa-github"></i> GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5" class="thumbnail rounded js-tilt">
+                  <!-- SVG: Experimentation platform — feature flag toggle flow -->
+                  <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;background:#090e18;border-radius:8px;">
+                    <defs>
+                      <linearGradient id="eg1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#6c63ff"/>
+                        <stop offset="100%" stop-color="#48c9b0"/>
+                      </linearGradient>
+                      <filter id="eblur"><feGaussianBlur stdDeviation="6"/></filter>
+                    </defs>
+                    <pattern id="egrid" width="30" height="30" patternUnits="userSpaceOnUse">
+                      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#fff" stroke-width="0.15" opacity="0.06"/>
+                    </pattern>
+                    <rect width="600" height="340" fill="url(#egrid)"/>
+                    <ellipse cx="300" cy="170" rx="200" ry="90" fill="#6c63ff" opacity="0.06" filter="url(#eblur)"/>
+
+                    <!-- Config service -->
+                    <rect x="30" y="130" width="110" height="80" rx="10" fill="#0f1b2d" stroke="#6c63ff" stroke-width="2"/>
+                    <text x="85" y="162" text-anchor="middle" fill="#6c63ff" font-size="10" font-weight="bold" font-family="monospace">CONFIG</text>
+                    <text x="85" y="178" text-anchor="middle" fill="#6c63ff" font-size="9" font-family="monospace">SERVICE</text>
+                    <text x="85" y="197" text-anchor="middle" fill="#aaa" font-size="8" font-family="monospace">flag store</text>
+
+                    <!-- Arrow to evaluator -->
+                    <line x1="140" y1="170" x2="210" y2="170" stroke="url(#eg1)" stroke-width="2" opacity="0.8"/>
+                    <polygon points="210,165 220,170 210,175" fill="#48c9b0" opacity="0.8"/>
+
+                    <!-- Evaluator box (center) -->
+                    <rect x="220" y="110" width="160" height="120" rx="12" fill="#0f1b2d" stroke="url(#eg1)" stroke-width="2.5"/>
+                    <text x="300" y="148" text-anchor="middle" fill="#48c9b0" font-size="12" font-weight="bold" font-family="monospace">EVALUATOR</text>
+                    <text x="300" y="166" text-anchor="middle" fill="#aaa" font-size="9" font-family="monospace">Redis · Real-time</text>
+                    <!-- Toggle pill -->
+                    <rect x="250" y="178" width="100" height="24" rx="12" fill="#1a2a3a" stroke="#48c9b0" stroke-width="1.5"/>
+                    <circle cx="338" cy="190" r="10" fill="#48c9b0"/>
+                    <text x="272" y="194" fill="#aaa" font-size="8" font-family="monospace">ON</text>
+                    <!-- Pulse -->
+                    <rect x="220" y="110" width="160" height="120" rx="12" fill="none" stroke="#48c9b0" stroke-width="1" opacity="0.3">
+                      <animate attributeName="opacity" values="0.3;0;0.3" dur="2.2s" repeatCount="indefinite"/>
+                      <animate attributeName="stroke-width" values="1;3;1" dur="2.2s" repeatCount="indefinite"/>
+                    </rect>
+
+                    <!-- Arrows to rollout targets -->
+                    <line x1="380" y1="150" x2="440" y2="100" stroke="url(#eg1)" stroke-width="1.8" opacity="0.8"/>
+                    <line x1="380" y1="170" x2="440" y2="170" stroke="url(#eg1)" stroke-width="1.8" opacity="0.8"/>
+                    <line x1="380" y1="190" x2="440" y2="240" stroke="url(#eg1)" stroke-width="1.8" opacity="0.8"/>
+
+                    <!-- Target boxes -->
+                    <rect x="440" y="78"  width="120" height="44" rx="8" fill="#0f1b2d" stroke="#48c9b0" stroke-width="1.8"/>
+                    <text x="500" y="97"  text-anchor="middle" fill="#48c9b0" font-size="9" font-family="monospace">10% Rollout</text>
+                    <text x="500" y="111" text-anchor="middle" fill="#aaa" font-size="8" font-family="monospace">Canary</text>
+
+                    <rect x="440" y="148" width="120" height="44" rx="8" fill="#0f1b2d" stroke="#6c63ff" stroke-width="1.8"/>
+                    <text x="500" y="167" text-anchor="middle" fill="#6c63ff" font-size="9" font-family="monospace">50% Rollout</text>
+                    <text x="500" y="181" text-anchor="middle" fill="#aaa" font-size="8" font-family="monospace">A/B Test</text>
+
+                    <rect x="440" y="218" width="120" height="44" rx="8" fill="#0f1b2d" stroke="#48c9b0" stroke-width="1.8"/>
+                    <text x="500" y="237" text-anchor="middle" fill="#48c9b0" font-size="9" font-family="monospace">100% GA</text>
+                    <text x="500" y="251" text-anchor="middle" fill="#aaa" font-size="8" font-family="monospace">Full Release</text>
+
+                    <text x="300" y="318" text-anchor="middle" fill="#fff" opacity="0.3" font-size="11" font-family="monospace">Experimentation-as-a-Service · Redis · athenahealth</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /END Project 4 -->
+
         </div>
       </div>
     </section>
@@ -634,6 +882,14 @@
           <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="mailto:veeramuthu408@gmail.com">
             Say Hello
           </a>
+          <div class="contact-social">
+            <a rel="noreferrer" href="https://linkedin.com/in/anguchamy-periyakaruppan" target="_blank">
+              <i class="fa fa-linkedin"></i> LinkedIn
+            </a>
+            <a rel="noreferrer" href="https://github.com/Anguchamy" target="_blank">
+              <i class="fa fa-github"></i> GitHub
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -646,8 +902,11 @@
           <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
         </a>
         <div class="social-links">
-          <a rel="noreferrer" href="https://linkedin.com/in/angu" target="_blank">
+          <a rel="noreferrer" href="https://linkedin.com/in/anguchamy-periyakaruppan" target="_blank">
             <i class="fa fa-linkedin fa-inverse"></i>
+          </a>
+          <a rel="noreferrer" href="https://github.com/Anguchamy" target="_blank">
+            <i class="fa fa-github fa-inverse"></i>
           </a>
           <a rel="noreferrer" href="mailto:veeramuthu408@gmail.com" target="_blank">
             <i class="fa fa-envelope fa-inverse"></i>
@@ -664,5 +923,56 @@
     <!-- /END Footer Section -->
 
     <script defer type="module" src="index.js"></script>
+
+    <script>
+      // Typed role animation
+      (function() {
+        var roles = [
+          'Senior Software Engineer',
+          'Generative AI Builder',
+          'Agentic Systems Architect',
+          'LangChain + LangGraph Dev',
+          'Distributed Systems Engineer',
+        ];
+        var el = document.getElementById('typed-role');
+        if (!el) return;
+        var ri = 0, ci = 0, deleting = false;
+        function tick() {
+          var word = roles[ri];
+          el.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
+          var delay = deleting ? 40 : 80;
+          if (!deleting && ci > word.length) { delay = 1800; deleting = true; }
+          else if (deleting && ci < 0) { deleting = false; ci = 0; ri = (ri + 1) % roles.length; delay = 300; }
+          setTimeout(tick, delay);
+        }
+        setTimeout(tick, 1200);
+      })();
+
+      // Scroll progress bar
+      window.addEventListener('scroll', function() {
+        var bar = document.getElementById('scroll-progress');
+        if (!bar) return;
+        var scrolled = document.documentElement.scrollTop;
+        var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        bar.style.width = (scrolled / total * 100) + '%';
+      });
+
+      // Nav dot active state
+      (function() {
+        var sections = ['hero','about','projects','experience','skills-section','contact'];
+        var dots = document.querySelectorAll('.nav-dot');
+        window.addEventListener('scroll', function() {
+          var mid = window.scrollY + window.innerHeight / 2;
+          sections.forEach(function(id, i) {
+            var el = document.getElementById(id);
+            if (!el || !dots[i]) return;
+            if (el.offsetTop <= mid && el.offsetTop + el.offsetHeight > mid) {
+              dots.forEach(function(d) { d.classList.remove('active'); });
+              dots[i].classList.add('active');
+            }
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
